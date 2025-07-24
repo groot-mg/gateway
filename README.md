@@ -20,7 +20,7 @@ Build with gradle (build + unit tests):
 Before running the ft, it is required to have wiremock and app running, so run:
 
 ```shell
-docker-compose -d up
+docker-compose up -d
 ```
 
 Run functional-tests:
