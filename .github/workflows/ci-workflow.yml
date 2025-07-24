@@ -101,7 +101,7 @@ jobs:
           ATTEMPT=0
           until [ "$ATTEMPT" -ge "$MAX_ATTEMPTS" ]
           do
-            docker-compose ps | grep -q "healthy" && break
+            docker compose ps | grep -q "healthy" && break
             ATTEMPT=$((ATTEMPT+1))
             echo "Attempt $ATTEMPT/$MAX_ATTEMPTS: Services not healthy yet, waiting..."
             sleep 5
