@@ -1,6 +1,6 @@
 [versions]
 ## Plugin versions
-springVersion = '3.4.7'
+springVersion = '3.5.3'
 springDependencyManagementVersion = '1.1.7'
 gitPropertiesVersion = '2.5.2'
 axionReleaseVersion = '1.19.0'
@@ -32,7 +32,7 @@ java = { id = 'java' }
 spring-boot-starter = { module = 'org.springframework.boot:spring-boot-starter' }
 spring-boot-starter-actuator = { module = 'org.springframework.boot:spring-boot-starter-actuator' }
 spring-boot-starter-oauth2-client = { module = 'org.springframework.boot:spring-boot-starter-oauth2-client' }
-spring-boot-starter-gateway = { module = 'org.springframework.cloud:spring-cloud-starter-gateway' }
+spring-boot-starter-gateway = { module = 'org.springframework.cloud:spring-cloud-starter-gateway-server-webflux' }
 spring-boot-starter-eureka-client = { module = 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client' }
 micrometer-prometheus = { module = 'io.micrometer:micrometer-registry-prometheus' }
 
