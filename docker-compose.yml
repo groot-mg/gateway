@@ -1,6 +1,6 @@
 services:
   mocks:
-    image: wiremock/wiremock:3.8.0
+    image: wiremock/wiremock:3.13.1
     restart: always
     ports:
       - "9090:8080"
