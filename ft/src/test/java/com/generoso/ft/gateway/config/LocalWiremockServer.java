@@ -1,6 +1,5 @@
 package com.generoso.ft.gateway.config;
 
-
 import com.github.tomakehurst.wiremock.client.WireMock;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
