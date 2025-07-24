@@ -92,7 +92,7 @@ jobs:
           path: app/build/libs/
 
       - name: Start docker containers (docker-compose)
-        run: docker-compose up -d
+        run: docker compose up -d
 
       - name: Wait for services to be healthy
         run: |
