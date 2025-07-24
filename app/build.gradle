@@ -16,7 +16,7 @@ jacoco {
 }
 
 ext {
-    set('springCloudVersion', "2023.0.6")
+    set('springCloudVersion', "2024.0.2")
 }
 
 java {
