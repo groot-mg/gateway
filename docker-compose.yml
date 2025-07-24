@@ -12,7 +12,6 @@ services:
       start_period: 10s
     volumes:
       - ./mocks/${MOCKS_DIRECTORY:-docker}/mappings:/home/wiremock/mappings
-#      - .mocks/__files:/home/wiremock/__files
 
   app:
     build: app
