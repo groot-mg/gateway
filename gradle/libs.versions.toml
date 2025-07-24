@@ -4,7 +4,7 @@ springVersion = '3.3.2'
 springDependencyManagementVersion = '1.1.7'
 gitPropertiesVersion = '2.5.2'
 axionReleaseVersion = '1.19.0'
-lombokVersion = '8.6'
+lombokVersion = '8.14'
 sonarqubeVersion = '6.2.0.5505'
 
 ## Library versions
