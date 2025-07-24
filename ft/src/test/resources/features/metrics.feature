@@ -39,8 +39,8 @@ Feature: Checking metrics endpoints contains the expected metrics
       | jvm_gc_live_data_size_bytes              |
       | jvm_gc_memory_allocated_bytes_total      |
       | jvm_gc_memory_promoted_bytes_total       |
-      | jvm_gc_concurrent_phase_time_seconds     |
-      | jvm_gc_concurrent_phase_time_seconds_max |
+#      | jvm_gc_concurrent_phase_time_seconds     | -- only available after the first GC run - so might not be available during testing
+#      | jvm_gc_concurrent_phase_time_seconds_max | -- only available after the first GC run - so might not be available during testing
 #      | jvm_gc_pause_seconds                     | -- only available after the first GC run - so might not be available during testing
 #      | jvm_gc_pause_seconds_max                 | -- only available after the first GC run - so might not be available during testing
       | jvm_memory_usage_after_gc                |

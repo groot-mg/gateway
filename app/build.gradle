@@ -16,7 +16,7 @@ jacoco {
 }
 
 ext {
-    set('springCloudVersion', "2023.0.2")
+    set('springCloudVersion', "2023.0.3")
 }
 
 java {
@@ -63,6 +63,7 @@ dependencies {
 	implementation(libs.spring.boot.starter.docs.webflux)
 
 	implementation(libs.micrometer.prometheus)
+  implementation(libs.google.guava)
 
 	testImplementation(libs.spring.boot.starter.test)
 	testImplementation(libs.reactor.test)

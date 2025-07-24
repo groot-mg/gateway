@@ -50,9 +50,9 @@ public class PrivateStepDefinitions {
 
     @Then("the body of the message contains the metrics:")
     public void theBodyOfTheMessageContains(List<String> metricNames) {
-        metricNames.forEach(name -> {
-            assertTrue(scenarioState.getActualResponse().body().contains(name));
-        });
+        metricNames.forEach(name ->
+            assertTrue(scenarioState.getActualResponse().body().contains(name), () ->
+                "Didn't find the metric: " + name));
     }
 
     @Then("it should return (.*) information containing the following keys and values:$")
