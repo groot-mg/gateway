@@ -6,6 +6,7 @@ RUN mkdir /apps
 
 COPY build/libs/gateway.jar /apps/gateway.jar
 
+# Used for docker healthcheck
 RUN apk add --update \
     curl \
     && rm -rf /var/cache/apk/*

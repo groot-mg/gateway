@@ -12,10 +12,10 @@ on:
       - 'mocks/**'
       - 'docker-compose.yml'
       - 'lombok.config'
-      - '.github/workflows/ci-workflow.yml'
+      - '.github/workflows/sonarcloud-analyses.yml'
 
 jobs:
-  build-and-push:
+  sonar-analyses:
     name: Sonarcloud analyses
     runs-on: ubuntu-latest
     steps:
