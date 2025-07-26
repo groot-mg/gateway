@@ -54,7 +54,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build + unit tests
-        run: ./gradlew :app:build
+        run: ./gradlew :app:build --no-daemon
 
       - name: Upload unit tests report
         if: always()
@@ -114,7 +114,7 @@ jobs:
           fi
 
       - name: Run functional tests
-        run: ./gradlew --no-daemon :ft:cucumber
+        run: ./gradlew :ft:cucumber --no-daemon
 
       - name: Archive Cucumber test reports
         if: always()

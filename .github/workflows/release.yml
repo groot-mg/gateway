@@ -30,10 +30,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Build
-        run: ./gradlew :app:build -x test
+        run: ./gradlew :app:build -x test --no-daemon
 
       - name: Generate release version
-        run: ./gradlew :app:release
+        run: ./gradlew :app:release --no-daemon
 
       - name: Set repository basename
         id: set-basename
