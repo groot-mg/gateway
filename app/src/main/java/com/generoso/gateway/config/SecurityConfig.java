@@ -48,8 +48,7 @@ public class SecurityConfig {
             var matcher = pattern.matcher(uri);
             var matches = matcher.matches();
             return Mono.just(matches)
-                .flatMap(m -> Boolean.TRUE.equals(m) ?
-                    ServerWebExchangeMatcher.MatchResult.match()
+                .flatMap(isMatching -> isMatching ? ServerWebExchangeMatcher.MatchResult.match()
                     : ServerWebExchangeMatcher.MatchResult.notMatch());
         }
 
