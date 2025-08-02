@@ -1,0 +1,18 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "UPDATE-APP",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "PUT",
+        "urlPathPattern": "/eureka/apps/.*"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}
