@@ -6,9 +6,10 @@ Feature: Checking actuator endpoints exist and return expected outputs
     Then the response status code should be 200
     And the health response body of the message should have the status "UP"
     And health components should contain the status UP:
-      | discoveryComposite |
-      | ping               |
-      | refreshScope       |
+      | discoveryComposite       |
+      | reactiveDiscoveryClients |
+      | ping                     |
+      | refreshScope             |
 
   Scenario: When application is running, display metric content
     Given a private endpoint PRIVATE_METRICS is prepared
