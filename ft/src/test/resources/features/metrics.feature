@@ -35,31 +35,31 @@ Feature: Checking metrics endpoints contains the expected metrics
     When the request is sent
     Then the response status code should be 200
     And the body of the message contains the metrics:
-      | jvm_gc_max_data_size_bytes               |
-      | jvm_gc_live_data_size_bytes              |
-      | jvm_gc_memory_allocated_bytes_total      |
-      | jvm_gc_memory_promoted_bytes_total       |
+      | jvm_gc_max_data_size_bytes          |
+      | jvm_gc_live_data_size_bytes         |
+      | jvm_gc_memory_allocated_bytes_total |
+      | jvm_gc_memory_promoted_bytes_total  |
 #      | jvm_gc_concurrent_phase_time_seconds     | -- only available after the first GC run - so might not be available during testing
 #      | jvm_gc_concurrent_phase_time_seconds_max | -- only available after the first GC run - so might not be available during testing
 #      | jvm_gc_pause_seconds                     | -- only available after the first GC run - so might not be available during testing
 #      | jvm_gc_pause_seconds_max                 | -- only available after the first GC run - so might not be available during testing
-      | jvm_memory_usage_after_gc                |
-      | jvm_gc_overhead                          |
-      | jvm_buffer_count_buffers                 |
-      | jvm_buffer_memory_used_bytes             |
-      | jvm_buffer_total_capacity_bytes          |
-      | jvm_memory_used_bytes                    |
-      | jvm_memory_committed_bytes               |
-      | jvm_memory_max_bytes                     |
-      | jvm_threads_peak_threads                 |
-      | jvm_threads_daemon_threads               |
-      | jvm_threads_live_threads                 |
-      | jvm_threads_started_threads_total        |
-      | jvm_threads_states_threads               |
-      | jvm_classes_loaded_classes               |
-      | jvm_classes_unloaded_classes_total       |
-      | jvm_info                                 |
-      | jvm_compilation_time_ms_total            |
+      | jvm_memory_usage_after_gc           |
+      | jvm_gc_overhead                     |
+      | jvm_buffer_count_buffers            |
+      | jvm_buffer_memory_used_bytes        |
+      | jvm_buffer_total_capacity_bytes     |
+      | jvm_memory_used_bytes               |
+      | jvm_memory_committed_bytes          |
+      | jvm_memory_max_bytes                |
+      | jvm_threads_peak_threads            |
+      | jvm_threads_daemon_threads          |
+      | jvm_threads_live_threads            |
+      | jvm_threads_started_threads_total   |
+      | jvm_threads_states_threads          |
+      | jvm_classes_loaded_classes          |
+      | jvm_classes_unloaded_classes_total  |
+      | jvm_info                            |
+      | jvm_compilation_time_ms_total       |
 
   # Provided by ObservationAutoConfiguration
   Scenario: [requests metrics] When application is running, display requests metric content
@@ -71,3 +71,11 @@ Feature: Checking metrics endpoints contains the expected metrics
       | http_server_requests_active_seconds_max |
       | http_server_requests_seconds            |
       | http_server_requests_seconds_max        |
+
+  # Enabled via spring.cloud.server.webflux.metrics.enabled: true
+  Scenario: [gateway metrics] When application is running, display start up metric content
+    Given a private endpoint PRIVATE_METRICS is prepared
+    When the request is sent
+    Then the response status code should be 200
+    And the body of the message contains the metrics:
+      | spring_cloud_gateway_routes_count |
