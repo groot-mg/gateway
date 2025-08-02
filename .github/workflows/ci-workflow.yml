@@ -179,3 +179,21 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  trigger-integration:
+    if: github.ref == 'refs/heads/main'
+    needs: docker-image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set repository basename
+        id: set-basename
+        run: echo "REPO_BASENAME=$(basename ${{ github.repository }})" >> $GITHUB_ENV
+
+      - name: Trigger integration tests
+        if: success()
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.INTEGRATION_TRIGGER_TOKEN }}
+          repository: groot-mg/integration-tests
+          event-type: service-updated
+          client-payload: '{"service": "${{ env.REPO_BASENAME }}"}'
