@@ -1,13 +1,14 @@
 package com.generoso.ft.gateway.steps;
 
 import com.generoso.ft.gateway.client.model.Apps;
-import com.generoso.ft.gateway.client.model.JsonMapper;
+import com.generoso.ft.gateway.util.JsonMapper;
 import com.generoso.ft.gateway.state.ScenarioState;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static com.generoso.ft.gateway.util.JsonMapper.fromJson;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -16,7 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ResponseStepDefinitions {
 
     private final ScenarioState scenarioState;
-    private final JsonMapper jsonMapper;
 
     @Then("the response status code should be {int}")
     public void theResponseCode(int expectedResponseCode) {
@@ -26,7 +26,7 @@ public class ResponseStepDefinitions {
     @And("the app list should be empty")
     public void appListShouldBeEmpty() {
         var response = scenarioState.getActualResponse();
-        var responseObj = jsonMapper.fromJson(response.body(), Apps.class);
+        var responseObj = fromJson(response.body(), Apps.class);
 
         assertTrue(responseObj.applications().application().isEmpty());
     }
@@ -34,7 +34,7 @@ public class ResponseStepDefinitions {
     @And("the app list contains an app called {}")
     public void appListContainsTheApp(String appName) {
         var response = scenarioState.getActualResponse();
-        var responseObj = jsonMapper.fromJson(response.body(), Apps.class);
+        var responseObj = fromJson(response.body(), Apps.class);
 
         assertFalse(responseObj.applications().application().isEmpty());
 
