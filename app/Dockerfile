@@ -11,4 +11,4 @@ RUN apk add --update \
     curl \
     && rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["exec", "java", "-jar", "/apps/gateway.jar"]
+ENTRYPOINT exec java -jar /apps/gateway.jar
