@@ -8,7 +8,7 @@ lombokVersion = '8.14.2'
 sonarqubeVersion = '6.3.1.5724'
 
 ## Library versions
-springDocVersion = '2.8.10'
+springDocVersion = '2.8.11'
 googleGuava = '33.4.8-jre'
 
 ## Test Libraries
