@@ -13,7 +13,7 @@ googleGuava = '33.4.8-jre'
 
 ## Test Libraries
 cucumberVersion = '7.27.2'
-jacksonDataBindingVersion = '2.19.2'
+jacksonDataBindingVersion = '2.20.0'
 wiremockStandaloneVersion = '3.0.1'
 
 [plugins]
