@@ -12,7 +12,7 @@ springDocVersion = '2.8.13'
 googleGuava = '33.4.8-jre'
 
 ## Test Libraries
-cucumberVersion = '7.28.1'
+cucumberVersion = '7.28.2'
 jacksonDataBindingVersion = '2.20.0'
 wiremockStandaloneVersion = '3.0.1'
 
