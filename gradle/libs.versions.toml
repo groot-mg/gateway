@@ -9,7 +9,7 @@ sonarqubeVersion = '6.3.1.5724'
 
 ## Library versions
 springDocVersion = '2.8.13'
-googleGuava = '33.4.8-jre'
+googleGuava = '33.5.0-jre'
 
 ## Test Libraries
 cucumberVersion = '7.28.2'
