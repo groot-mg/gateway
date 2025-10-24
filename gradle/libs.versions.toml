@@ -5,7 +5,7 @@ springDependencyManagementVersion = '1.1.7'
 gitPropertiesVersion = '2.5.3'
 axionReleaseVersion = '1.20.1'
 lombokVersion = '8.14.2'
-sonarqubeVersion = '6.3.1.5724'
+sonarqubeVersion = '7.0.1.6134'
 
 ## Library versions
 springDocVersion = '2.8.13'
