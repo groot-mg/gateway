@@ -3,7 +3,7 @@
 springVersion = '3.5.7'
 springDependencyManagementVersion = '1.1.7'
 gitPropertiesVersion = '2.5.3'
-axionReleaseVersion = '1.20.1'
+axionReleaseVersion = '1.21.0'
 lombokVersion = '8.14.2'
 sonarqubeVersion = '7.0.1.6134'
 
